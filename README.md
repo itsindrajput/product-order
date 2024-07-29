@@ -14,33 +14,33 @@ Product Order App is a single-page application (SPA) developed in Angular 17, wh
 
 ## How It Works
 
-1. Initial View
-   -- The form starts with a single row displaying:
+1. **Initial View**
+   --- The form starts with a single row displaying:
    --- Product Name: Initially shows "Choose Product".
    --- Quantity: Initially shows "Choose Quantity".
 
-- Users can click on "Choose Product" to open a drop-down menu and select a product.
-- Users can click on "Choose Quantity" to select a quantity from 0 to 5.
+-- Users can click on "Choose Product" to open a drop-down menu and select a product.
+-- Users can click on "Choose Quantity" to select a quantity from 0 to 5.
 
-2. Adding More Rows
-   -- After selecting a product and quantity in the first row, click the "ADD" button.
-   -- A new row will appear below the existing row with the same default options ("Choose Product" and "Choose Quantity").
-   -- Users can add up to 8 rows. Each row will follow the same pattern: choose a product and quantity.
+2. **Adding More Rows**
+   --- After selecting a product and quantity in the first row, click the "ADD" button.
+   --- A new row will appear below the existing row with the same default options ("Choose Product" and "Choose Quantity").
+   --- Users can add up to 8 rows. Each row will follow the same pattern: choose a product and quantity.
 
-3. Show Order
+3. **Show Order**
 
-- After filling in up to 8 rows, click the "Show Order" button located below the last row.
-- This action will remove any rows that are not completely filled (i.e., rows where the product or quantity is not selected).
+-- After filling in up to 8 rows, click the "Show Order" button located below the last row.
+-- This action will remove any rows that are not completely filled (i.e., rows where the product or quantity is not selected).
 
-4. Order Summary
+4. **Order Summary**
 
-- A new section (Grid 2) will be displayed below the "Show Order" button.
-- This grid will list all selected products and their corresponding quantities.
+-- A new section (Grid 2) will be displayed below the "Show Order" button.
+-- This grid will list all selected products and their corresponding quantities.
 
-5. Text-to-Speech
+5. **Text-to-Speech**
 
-- Click the "What is my Order?" button to have the app read out the order list from Grid 2.
-- The text-to-speech functionality will use a free API (e.g., VoiceRSS Text-to-Speech) to convert the order list into spoken words.
+-- Click the "What is my Order?" button to have the app read out the order list from Grid 2.
+-- The text-to-speech functionality will use a free API (e.g., VoiceRSS Text-to-Speech) to convert the order list into spoken words.
 
 ## Getting Started
 
@@ -81,7 +81,7 @@ Follow these instructions to get a local copy of the project up and running on y
 ## Development server
 
 - I have Deploy the application on a hosting platform like: Netlify
-- 🌎 https://product-order.netlify.app/
+- 🌎 https://product-order-app.netlify.app/
 
 - You can also Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductRowComponent } from '../product-row/product-row.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-product-order',
@@ -43,35 +44,22 @@ export class ProductOrderComponent {
   }
 
   textToSpeech(text: string) {
-    const apiKey = '0cd349ebc1mshed072129440aa34p163847jsn829a492d8a18';
-    const url = 'https://voicerss-text-to-speech.p.rapidapi.com/';
+    const apiKey = '959663e8c7f04b53bbe44aa31d49942d'; 
+    const url = `https://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${encodeURIComponent(text)}`;
 
-    const data = new FormData();
-    data.append('src', text);
-    data.append('hl', 'en-us');
-    data.append('r', '0');
-    data.append('c', 'mp3');
-    data.append('f', '8khz_8bit_mono');
-
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener('readystatechange', function () {
-      if (this.readyState === this.DONE) {
-        if (this.status === 200) {
-          const audio = new Audio(URL.createObjectURL(this.response));
-          audio.play();
-          audio.onended = () => URL.revokeObjectURL(audio.src);
-        } else {
-          console.error('Error fetching text-to-speech:', this.statusText);
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
         }
-      }
-    });
-
-    xhr.open('POST', url);
-    xhr.setRequestHeader('x-rapidapi-key', apiKey);
-    xhr.setRequestHeader('x-rapidapi-host', 'voicerss-text-to-speech.p.rapidapi.com');
-    xhr.responseType = 'blob'; // Ensure the response is treated as binary data
-    xhr.send(data);
+        return response.blob();
+      })
+      .then(blob => {
+        const audio = new Audio(URL.createObjectURL(blob));
+        audio.play();
+      })
+      .catch(error => {
+        console.error('Error fetching text-to-speech:', error);
+      });
   }
 }

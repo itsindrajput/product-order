@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductOrderComponent } from './product-order/product-order.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: ProductOrderComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AppComponent,
     ProductOrderComponent,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   bootstrap: []
 })
