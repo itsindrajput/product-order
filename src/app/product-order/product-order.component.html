@@ -3,22 +3,33 @@
     *ngFor="let row of productRows; let i = index"
     (productAdded)="onProductAdded($event, i)"
   ></app-product-row>
+
   <button
     (click)="showOrder()"
-    class="bg-green-500 text-white p-2 rounded-md mt-4"
+    class="bg-blue-500 text-white p-2 rounded-md mt-14 mb-6 hover:bg-green-600 transition duration-200"
   >
     Show Order
   </button>
+
   <div *ngIf="showOrderSummary" class="mt-4">
-    <h2 class="text-2xl font-bold mb-4">Order</h2>
-    <ul>
-      <li *ngFor="let item of order">
-        {{ item.product }}: {{ item.quantity }}
-      </li>
-    </ul>
+    <table class="w-full table-auto text-left border border-gray-300 mt-2">
+      <thead class="text-black">
+        <tr>
+          <th class="px-4 py-2 border">Product Name</th>
+          <th class="px-4 py-2 border">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order">
+          <td class="border px-4 py-2">{{ item.product }}</td>
+          <td class="border px-4 py-2">{{ item.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+
     <button
       (click)="readOrder()"
-      class="bg-blue-500 text-white p-2 rounded-md mt-4"
+      class="bg-blue-500 text-white p-2 rounded-md mt-14 hover:bg-blue-600 transition duration-200"
     >
       What is my Order?
     </button>
