@@ -1,32 +1,39 @@
-<div class="flex items-center space-x-4">
-  <div>
-    <label for="product" class="sr-only">Product</label>
-    <select
-      id="product"
-      [(ngModel)]="selectedProduct"
-      (change)="onProductChange()"
-      class="block w-full p-2 border border-gray-300 rounded-md"
-    >
-      <option value="" disabled>Choose Product</option>
-      <option *ngFor="let product of products" [value]="product">
-        {{ product }}
-      </option>
-    </select>
-  </div>
-  <div>
-    <label for="quantity" class="sr-only">Quantity</label>
-    <select
-      id="quantity"
-      [(ngModel)]="selectedQuantity"
-      class="block w-full p-2 border border-gray-300 rounded-md"
-    >
-      <option value="" disabled>Choose Quantity</option>
-      <option *ngFor="let quantity of quantities" [value]="quantity">
-        {{ quantity }}
-      </option>
-    </select>
-  </div>
-  <button (click)="addProduct()" class="bg-blue-500 text-white p-2 rounded-md">
-    Add
-  </button>
-</div>
+<table class="w-full">
+  <tbody>
+    <tr class="w-full">
+      <td class="w-[40%] border px-4 py-2">
+        <select
+          id="product"
+          [(ngModel)]="selectedProduct"
+          (change)="onProductChange()"
+          class="block w-full p-2 border border-gray-300 rounded-md"
+        >
+          <option value="" disabled>Choose Product</option>
+          <option *ngFor="let product of products" [value]="product">
+            {{ product }}
+          </option>
+        </select>
+      </td>
+      <td class="w-[40%] border px-4 py-2">
+        <select
+          id="quantity"
+          [(ngModel)]="selectedQuantity"
+          class="block w-full p-2 border border-gray-300 rounded-md"
+        >
+          <option value="" disabled>Choose Quantity</option>
+          <option *ngFor="let quantity of quantities" [value]="quantity">
+            {{ quantity }}
+          </option>
+        </select>
+      </td>
+      <td class="w-[20%] border px-4 py-2 text-center">
+        <button
+          (click)="addProduct()"
+          class="bg-transparent text-black p-2 rounded-md border-2 border-green-700 hover:bg-green-600 hover:text-white transition duration-200"
+        >
+          Add
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

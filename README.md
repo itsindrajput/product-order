@@ -17,17 +17,19 @@ Product Order App is a single-page application (SPA) developed in Angular 17, wh
 ## How It Works
 
 1. **Initial View** <br />
-   -> The form starts with a single row displaying:<br />
-   -> Product Name: Initially shows "Choose Product".<br />
-   -> Quantity: Initially shows "Choose Quantity".
+
+- -> The form starts with a single row displaying:<br />
+  -> Product Name: Initially shows "Choose Product".<br />
+  -> Quantity: Initially shows "Choose Quantity".
 
 - Users can click on "Choose Product" to open a drop-down menu and select a product.
 - Users can click on "Choose Quantity" to select a quantity from 0 to 5.
 
 2. **Adding More Rows**<br />
-   -> After selecting a product and quantity in the first row, click the "ADD" button.<br />
-   -> A new row will appear below the existing row with the same default options ("Choose Product" and "Choose Quantity").<br />
-   -> Users can add up to 8 rows. Each row will follow the same pattern: choose a product and quantity.
+
+- -> After selecting a product and quantity in the first row, click the "ADD" button.<br />
+  -> A new row will appear below the existing row with the same default options ("Choose Product" and "Choose Quantity").<br />
+  -> Users can add up to 8 rows. Each row will follow the same pattern: choose a product and quantity.
 
 3. **Show Order**
 
